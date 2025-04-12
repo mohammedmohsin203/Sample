@@ -25,7 +25,7 @@ const LanguageSwitcher = () => {
     setCurrentLanguage(savedLanguage);
 
     const urlLanguage = pathname.split("/")[1];
-    if (["en", "ar", "zh"].includes(urlLanguage)) {
+    if (["en", "ar"].includes(urlLanguage)) {
       setCurrentLanguage(urlLanguage);
     }
   }, [pathname]);

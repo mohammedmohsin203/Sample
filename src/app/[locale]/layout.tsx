@@ -60,11 +60,7 @@ export default async function RootLayout({
           hrefLang="ar"
           href="https://next-app-i18n-starter.vercel.app/ar"
       />
-      <link
-          rel="alternate"
-          hrefLang="zh"
-          href="https://next-app-i18n-starter.vercel.app/zh"
-      />
+
       <meta name="keywords" content={t("keywords")}/>
       <meta name="viewport" content="width=device-width, initial-scale=1"/>
       <script
@@ -100,7 +96,7 @@ export default async function RootLayout({
   );
 }
 
-const locales = ["en", "ar", "zh", "es", "jp"] as const;
+const locales = ["en", "ar"] as const;
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -147,7 +143,7 @@ export async function generateMetadata({
       languages: {
         en: "https://next-app-i18n-starter.vercel.app/en",
         ar: "https://next-app-i18n-starter.vercel.app/ar",
-        zh: "https://next-app-i18n-starter.vercel.app/zh",
+
       },
     },
     robots: {
