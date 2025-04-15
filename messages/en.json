@@ -50,6 +50,73 @@
         "logisticsTerminalsDescription": "Rugged terminals for logistics operations, designed for harsh environments."
       }
     },
+    "carousel": {
+      "software": [
+        {
+          "title": "Port & Logistics Management Application",
+          "category": "Software Solutions",
+          "content": "Streamline port operations with Burj Al Najoom Technology's advanced software, offering container tracking, scheduling, and logistics coordination for enhanced efficiency."
+        },
+        {
+          "title": "Shipping NVOCC SaudiEO (Fasah) Application",
+          "category": "Software Solutions",
+          "content": "Manage shipping operations seamlessly with our specialized app for non-vessel operating common carriers, designed for Saudi Arabia's logistics needs."
+        },
+        {
+          "title": "Custom Web Development",
+          "category": "Software Solutions",
+          "content": "Get tailored web applications from Burj Al Najoom Technology to meet your business needs, from e-commerce platforms to enterprise solutions."
+        },
+        {
+          "title": "Custom Mobile App Development",
+          "category": "Software Solutions",
+          "content": "Develop bespoke mobile apps for iOS and Android with Burj Al Najoom Technology, ensuring top performance and user experience."
+        },
+        {
+          "title": "Inventory Management System",
+          "category": "Software Solutions",
+          "content": "Track and manage inventory across multiple locations with our comprehensive system, designed to optimize logistics operations."
+        },
+        {
+          "title": "Vessel Tracking Software",
+          "category": "Software Solutions",
+          "content": "Monitor vessels in real-time with Burj Al Najoom Technology's software, optimizing shipping routes and schedules for efficiency."
+        },
+        {
+          "title": "Warehouse Automation Software",
+          "category": "Software Solutions",
+          "content": "Automate warehouse operations with our smart software, streamlining picking, packing, and shipping processes for maximum productivity."
+        }
+      ],
+      "hardware": [
+        {
+          "title": "Barcode Label & Receipt Printers",
+          "category": "Hardware Solutions",
+          "content": "Discover high-quality barcode label printers by Burj Al Najoom Technology, designed for logistics and inventory management to ensure accuracy and efficiency."
+        },
+        {
+          "title": "PVC ID Card Printers",
+          "category": "Hardware Solutions",
+          "content": "Produce durable PVC ID cards for employees and access control with our specialized printers, tailored for secure logistics environments."
+        },
+        {
+          "title": "Connect & Share Network Printers",
+          "category": "Hardware Solutions",
+          "content": "Enable seamless printing across your organization with Burj Al Najoom Technology's network-enabled printers, ideal for logistics operations."
+        },
+        {
+          "title": "Photocopiers",
+          "category": "Hardware Solutions",
+          "content": "Rely on our high-volume photocopiers for document reproduction, ensuring your logistics team has the tools needed for efficient operations."
+        },
+        {
+          "title": "Modem, AP WiFi, Router Configuration",
+          "category": "Hardware Solutions",
+          "content": "Set up comprehensive networking solutions with Burj Al Najoom Technology, including modem, WiFi access points, and router configuration for logistics networks."
+        }
+      ]
+    },
+    "dummyContentTitle": "Mohsin here",
     "contact": "Contact Us",
     "getInTouch": "Get in Touch",
     "aboutDescription": "Burj Al Najoom Technology is a premier technology agency based in Jeddah, dedicated to delivering innovative software and hardware solutions. With a focus on port and logistics management, we empower businesses to optimize their operations through advanced technology, seamless integration, and reliable support.",

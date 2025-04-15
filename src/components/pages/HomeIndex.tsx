@@ -29,6 +29,9 @@ import { useRouter, usePathname } from "next/navigation"; // Use next/navigation
 import LanguageSwitcher from "../LanguageSwitcher";
 import { cn } from "@/lib/utils";
 import { BentoGrid, BentoGridItem } from "../ui/bento-grid";
+import Image from 'next/image'
+import Logo from "../../../public/Logo.png"
+import {FeaturesSectionDemo} from "@/components/FeaturesSectionDemo";
 
 export default function HomeIndex() {
   const t = useTranslations("Index");
@@ -223,9 +226,24 @@ export default function HomeIndex() {
         {/* Header */}
         <header className="fixed top-0 left-0 right-0 z-50 px-4 lg:px-6 h-16 flex items-center justify-between border-b bg-background">
           <Link className="flex items-center justify-center" href="/">
-            <Globe className="h-6 w-6 m-2 text-primary" />
-            <span className="font-bold text-xl">{t("boilerplateName")}</span>
+            <Image src={Logo} width={100} height={100} alt='logo' className="h-6 w-6 m-2 text-primary" />
+            <span className="font-bold text-xl hidden md:block">{t("boilerplateName")}</span>
+            <span className="font-bold text-xl block md:hidden">{t("logo")}</span>
           </Link>
+          <div className='flex items-center gap-4 hidden md:block'>
+          <Link href="#hero" className="hover:bg-muted p-2 rounded">
+            {t("hero")}
+          </Link>
+          <Link href="#about" className="hover:bg-muted p-2 rounded">
+            {t("about")}
+          </Link>
+          <Link href="#services" className="hover:bg-muted p-2 rounded">
+            {t("services.title")}
+          </Link>
+            <Link href="#contact" className="hover:bg-muted p-2 rounded">
+            {t("contact")}
+          </Link>
+          </div>
           <div className="flex items-center gap-4">
             <LanguageSwitcher />
             <ModeToggle />
@@ -274,12 +292,25 @@ export default function HomeIndex() {
                     dangerouslySetInnerHTML={{
                       __html: `
                     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js" async></script>
-                    <spline-viewer
-                      loading-anim-type="spinner-small-light"
-                      url="https://prod.spline.design/62HFATzOh1-EqnmH/scene.splinecode"
-                      style="width: 100%; height: 500px;"
-                    >
-                      <div className="w-full h-[500px]">
+                   <style>
+  spline-viewer.custom-spline {
+    width: 100%;
+    height: 300px;
+  }
+
+  @media (min-width: 768px) {
+    spline-viewer.custom-spline {
+      height: 500px;
+    }
+  }
+</style>
+
+<spline-viewer
+  loading-anim-type="spinner-small-light"
+  url="https://prod.spline.design/62HFATzOh1-EqnmH/scene.splinecode"
+  class="custom-spline"
+>
+                      <div className="w-full h-[200px] md:h-[500px]">
                         <Loader className="animate-spin w-[20px] h-[20px]" />
                       </div>
                     </spline-viewer>
@@ -386,14 +417,14 @@ export default function HomeIndex() {
                     />
                 ))}
               </BentoGrid>
-
+              <FeaturesSectionDemo/>
             </div>
           </section>
 
           {/* Contact Section */}
           <section id="contact" className="w-full py-8 md:py-12 lg:py-20">
             <div className="px-4 sm:px-6 md:px-8">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter text-center mb-6 text-foreground">
+              <h2 className="text-2xl sm:text-7xl md:text-4xl lg:text-5xl font-bold tracking-tighter text-center mb-6 text-foreground">
                 {t("contact")}
               </h2>
               <div className="max-w-2xl mx-auto space-y-6">
