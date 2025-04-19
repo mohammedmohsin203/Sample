@@ -1,9 +1,10 @@
 'use client';
 
-import { useEffect, useState } from "react";
+import {useEffect, useState} from "react";
 import HomeIndex from "@/components/pages/HomeIndex";
 import { AnimatePresence } from "framer-motion";
-import Preloader from "@/components/PreLoader"; // fixed import path if needed
+import Preloader from "@/components/PreLoader";
+import {SmoothCursor} from "@/components/ui/smooth-cursor";
 
 export default function HomePage() {
     const [isLoading, setIsLoading] = useState(true);
@@ -21,12 +22,14 @@ export default function HomePage() {
         })();
     }, []);
 
+
     return (
         <>
             <AnimatePresence mode="wait">
                 {isLoading && <Preloader />}
             </AnimatePresence>
             <HomeIndex />
+            <SmoothCursor />
         </>
     );
 }

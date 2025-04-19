@@ -9,6 +9,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "../globals.css";
 import React from "react";
+import { Toaster } from "@/components/ui/sonner"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,67 +40,73 @@ export default async function RootLayout({
   const isArabic = locale === "ar";
   const t = await getTranslations({ locale, namespace: "Metadata" });
   return (
-    <html lang={locale} dir={isArabic ? "rtl" : "ltr"} suppressHydrationWarning>
-    <head>
-      <link
-          rel="canonical"
-          href={`https://next-app-i18n-starter.vercel.app`}
-      />
-      <link
-          rel="alternate"
-          hrefLang="x-default"
-          href="https://next-app-i18n-starter.vercel.app"
-      />
-      <link
-          rel="alternate"
-          hrefLang="en"
-          href="https://next-app-i18n-starter.vercel.app/en"
-      />
-      <link
-          rel="alternate"
-          hrefLang="ar"
-          href="https://next-app-i18n-starter.vercel.app/ar"
-      />
+      <html
+          lang={locale}
+          dir={isArabic ? "rtl" : "ltr"}
+          suppressHydrationWarning
+          style={{scrollBehavior: "smooth"}}
+      >
+      <head>
+        <link
+            rel="canonical"
+            href={`https://next-app-i18n-starter.vercel.app`}
+        />
+        <link
+            rel="alternate"
+            hrefLang="x-default"
+            href="https://next-app-i18n-starter.vercel.app"
+        />
+        <link
+            rel="alternate"
+            hrefLang="en"
+            href="https://next-app-i18n-starter.vercel.app/en"
+        />
+        <link
+            rel="alternate"
+            hrefLang="ar"
+            href="https://next-app-i18n-starter.vercel.app/ar"
+        />
 
-      <meta name="keywords" content={t("keywords")}/>
-      <meta name="viewport" content="width=device-width, initial-scale=1"/>
-      <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              name: t("title"),
-              description: t("description"),
-              url: "https://next-app-i18n-starter.vercel.app",
-              inLanguage: locale,
-            }),
-          }}
-      />
-    </head>
-    <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        suppressHydrationWarning
-    >
-    <ThemeProvider
-        attribute="class"
-        defaultTheme="dark"
-        enableSystem
-        disableTransitionOnChange
-    >
-      <NextIntlClientProvider>{children}</NextIntlClientProvider>
-        </ThemeProvider>
-        <Analytics />
-        <SpeedInsights />
+        <meta name="keywords" content={t("keywords")}/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                name: t("title"),
+                description: t("description"),
+                url: "https://next-app-i18n-starter.vercel.app",
+                inLanguage: locale,
+              }),
+            }}
+        />
+      </head>
+      <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+          suppressHydrationWarning
+      >
+      <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+      >
+        <NextIntlClientProvider>{children}
+          <Toaster/></NextIntlClientProvider>
+      </ThemeProvider>
+      <Analytics/>
+      <SpeedInsights/>
       </body>
-    </html>
+      </html>
   );
 }
 
 const locales = ["en", "ar"] as const;
 
 export function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
+  return locales.map((locale) => ({locale }));
 }
 
 export async function generateMetadata({

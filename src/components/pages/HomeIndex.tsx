@@ -1,4 +1,3 @@
-"use client";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -16,60 +15,62 @@ import {
   DialogDescription,
   DialogFooter,
 } from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
-import { Globe, Menu, Phone, Mail, MapPin, Send, Ship, Printer, Network, Server, Warehouse, Package, Truck, BarChart2, Scan } from "lucide-react";
+import {
+  Globe,
+  Menu,
+  Phone,
+  Mail,
+  MapPin,
+  Ship,
+  Printer,
+  Network,
+  Server,
+  Warehouse,
+  Package,
+  Truck,
+  BarChart2,
+  Scan,
+} from "lucide-react";
 import { useEffect, useState } from "react";
 import { ModeToggle } from "../ModeToggle";
 import { useTranslations, useLocale } from "next-intl";
-import { useRouter, usePathname } from "next/navigation"; // Use next/navigation for routing
+import { useRouter, usePathname } from "next/navigation";
 import LanguageSwitcher from "../LanguageSwitcher";
 import { cn } from "@/lib/utils";
 import { BentoGrid, BentoGridItem } from "../ui/bento-grid";
-import Image from 'next/image'
-import Logo from "../../../public/Logo.png"
-import {FeaturesSectionDemo} from "@/components/FeaturesSectionDemo";
+import Image from "next/image";
+import Logo from "../../../public/Logo.png";
+import { FeaturesSectionDemo } from "@/components/FeaturesSectionDemo";
+import Globes from "@/components/Globe";
+import ContactCard from "@/components/ContactCard";
 
 export default function HomeIndex() {
   const t = useTranslations("Index");
   const f = useTranslations("Footer");
   const router = useRouter();
   const pathname = usePathname();
-  const currentLocale = useLocale(); // Get the current locale
+  const currentLocale = useLocale();
   const [isRTL, setIsRTL] = useState(false);
   const [isLanguageDialogOpen, setIsLanguageDialogOpen] = useState(false);
 
   useEffect(() => {
     setIsRTL(document.documentElement.dir === "rtl");
 
-    // Check if the user has already selected a language
     const hasSelectedLanguage = localStorage.getItem("hasSelectedLanguage");
     if (!hasSelectedLanguage) {
-      // Show the dialog on initial load
       setIsLanguageDialogOpen(true);
     }
   }, []);
 
   const handleLanguageSelect = (locale: string) => {
-    // Store the selection in localStorage to prevent showing the dialog again
     localStorage.setItem("hasSelectedLanguage", "true");
-
-    // Construct the new path with the selected locale
-    // Remove the current locale from the pathname (e.g., /en/path -> /path)
     const basePath = pathname.startsWith(`/${currentLocale}`)
         ? pathname.replace(`/${currentLocale}`, "")
         : pathname;
-
-    // Construct the new path with the selected locale (e.g., /en/path or /ar/path)
     const newPath = `/${locale}${basePath === "/" ? "" : basePath}`;
-
-    // Redirect to the new path
     router.push(newPath);
-
-    // Close the dialog
     setIsLanguageDialogOpen(false);
   };
 
@@ -194,9 +195,7 @@ export default function HomeIndex() {
           <DialogContent className="sm:max-w-[425px]">
             <DialogHeader>
               <DialogTitle>{t("selectLanguage")}</DialogTitle>
-              <DialogDescription>
-                {t("chooseLanguagePrompt")}
-              </DialogDescription>
+              <DialogDescription>{t("chooseLanguagePrompt")}</DialogDescription>
             </DialogHeader>
             <div className="grid gap-4 py-4">
               <Button
@@ -213,10 +212,13 @@ export default function HomeIndex() {
               </Button>
             </div>
             <DialogFooter>
-              <Button variant="outline" onClick={() => {
-                localStorage.setItem("hasSelectedLanguage", "true");
-                setIsLanguageDialogOpen(false);
-              }}>
+              <Button
+                  variant="outline"
+                  onClick={() => {
+                    localStorage.setItem("hasSelectedLanguage", "true");
+                    setIsLanguageDialogOpen(false);
+                  }}
+              >
                 {t("close")}
               </Button>
             </DialogFooter>
@@ -224,54 +226,67 @@ export default function HomeIndex() {
         </Dialog>
 
         {/* Header */}
-        <header className="fixed top-0 left-0 right-0 z-50 px-4 lg:px-6 h-16 flex items-center justify-between border-b bg-background">
+        <header
+            className="fixed top-0 left-0 right-0 z-50 px-4 lg:px-6 h-16 flex items-center justify-between border-b bg-background">
           <Link className="flex items-center justify-center" href="/">
-            <Image src={Logo} width={100} height={100} alt='logo' className="h-6 w-6 m-2 text-primary" />
+            <Image src={Logo} width={100} height={100} alt="logo" className="h-6 w-6 m-2 text-primary"/>
             <span className="font-bold text-xl hidden md:block">{t("boilerplateName")}</span>
             <span className="font-bold text-xl block md:hidden">{t("logo")}</span>
           </Link>
-          <div className='flex items-center gap-4 hidden md:block'>
-          <Link href="#hero" className="hover:bg-muted p-2 rounded">
-            {t("hero")}
-          </Link>
-          <Link href="#about" className="hover:bg-muted p-2 rounded">
-            {t("about")}
-          </Link>
-          <Link href="#services" className="hover:bg-muted p-2 rounded">
-            {t("services.title")}
-          </Link>
-            <Link href="#contact" className="hover:bg-muted p-2 rounded">
-            {t("contact")}
-          </Link>
+          <div className="flex items-center gap-4 hidden md:block">
+            <Button variant="link" asChild>
+              <Link href="#hero" className="text-foreground">
+                {t('hero')}
+              </Link>
+            </Button>
+            <Button variant="link" asChild>
+              <Link href="#about" className="text-foreground">
+                {t('about')}
+              </Link>
+            </Button>
+            <Button variant="link" asChild>
+              <Link href="#services" className="text-foreground">
+                {t('services.title')}
+              </Link>
+            </Button>
+            <Button variant="link" asChild>
+              <Link href="#contact" className="text-foreground">
+                {t('contact')}
+              </Link>
+            </Button>
           </div>
           <div className="flex items-center gap-4">
-            <LanguageSwitcher />
-            <ModeToggle />
+            <LanguageSwitcher/>
+            <ModeToggle/>
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="lg:hidden">
-                  <Menu className="h-6 w-6" />
+                  <Menu className="h-6 w-6"/>
                 </Button>
               </SheetTrigger>
               <SheetContent side={isRTL ? "right" : "left"} className="w-64">
                 <div className="flex flex-col gap-4 mt-6">
                   <SheetClose asChild>
-                    <Link href="#hero" className="hover:bg-muted p-2 rounded">
+                    <Link href="#hero"
+                          className="ml-4 p-2 rounded text-base sm:text-lg text-foreground hover:text-primary hover:font-bold hover:italic hover:bg-primary/20 hover:translate-x-2 transition-all duration-300 ease-in-out">
                       {t("hero")}
                     </Link>
                   </SheetClose>
                   <SheetClose asChild>
-                    <Link href="#about" className="hover:bg-muted p-2 rounded">
+                    <Link href="#about"
+                          className="ml-4 p-2 rounded text-base sm:text-lg text-foreground hover:text-primary hover:font-bold hover:italic hover:bg-primary/20 hover:translate-x-2 transition-all duration-300 ease-in-out">
                       {t("about")}
                     </Link>
                   </SheetClose>
                   <SheetClose asChild>
-                    <Link href="#services" className="hover:bg-muted p-2 rounded">
+                    <Link href="#services"
+                          className="ml-4 p-2 rounded text-base sm:text-lg text-foreground hover:text-primary hover:font-bold hover:italic hover:bg-primary/20 hover:translate-x-2 transition-all duration-300 ease-in-out">
                       {t("services.title")}
                     </Link>
                   </SheetClose>
                   <SheetClose asChild>
-                    <Link href="#contact" className="hover:bg-muted p-2 rounded">
+                    <Link href="#contact"
+                          className="ml-4 p-2 rounded text-base sm:text-lg text-foreground hover:text-primary hover:font-bold hover:italic hover:bg-primary/20 hover:translate-x-2 transition-all duration-300 ease-in-out">
                       {t("contact")}
                     </Link>
                   </SheetClose>
@@ -284,39 +299,11 @@ export default function HomeIndex() {
         {/* Main Content */}
         <main className="w-full pt-16">
           {/* Hero Section */}
-          <section id="hero" className="w-full py-8 md:py-12 lg:py-20 bg-muted">
+          <section id="hero" className="w-full pb-8 md:pb-12 lg:pb-20 bg-muted">
             <div className="px-4 sm:px-6 md:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
-              <div className="mt-6 md:mt-0 w-full max-w-[300px] sm:max-w-[400px] md:max-w-[500px] h-[300px] sm:h-[400px] md:h-[500px]">
-                {/* Inject the Spline Viewer Script */}
-                <div
-                    dangerouslySetInnerHTML={{
-                      __html: `
-                    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js" async></script>
-                   <style>
-  spline-viewer.custom-spline {
-    width: 100%;
-    height: 300px;
-  }
-
-  @media (min-width: 768px) {
-    spline-viewer.custom-spline {
-      height: 500px;
-    }
-  }
-</style>
-
-<spline-viewer
-  loading-anim-type="spinner-small-light"
-  url="https://prod.spline.design/62HFATzOh1-EqnmH/scene.splinecode"
-  class="custom-spline"
->
-                      <div className="w-full h-[200px] md:h-[500px]">
-                        <Loader className="animate-spin w-[20px] h-[20px]" />
-                      </div>
-                    </spline-viewer>
-                  `,
-                    }}
-                />
+              <div
+                  className="flex items-center justify-center my-4 sm:my-0 w-full max-w-[300px] sm:max-w-[400px] md:max-w-[600px] h-[300px] md:h-[600px]">
+                <Globes/>
               </div>
               <div className="space-y-4 text-center md:text-left">
                 <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter text-foreground">
@@ -346,27 +333,19 @@ export default function HomeIndex() {
                 <div className="space-y-4">
                   <Card className="shadow-lg relative overflow-hidden bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
                     <CardHeader>
-                      <CardTitle className="text-lg sm:text-xl md:text-2xl">
-                        {t("about")}
-                      </CardTitle>
+                      <CardTitle className="text-lg sm:text-xl md:text-2xl">{t("about")}</CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-muted-foreground text-sm sm:text-base">
-                        {t("aboutDescription")}
-                      </p>
+                      <p className="text-muted-foreground text-sm sm:text-base">{t("aboutDescription")}</p>
                     </CardContent>
                     <div className="absolute inset-0 bg-gradient-to-br from-transparent to-primary/10 opacity-0 hover:opacity-100 transition-opacity duration-300" />
                   </Card>
                   <Card className="shadow-lg relative overflow-hidden bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
                     <CardHeader>
-                      <CardTitle className="text-lg sm:text-xl md:text-2xl">
-                        {t("ourMission")}
-                      </CardTitle>
+                      <CardTitle className="text-lg sm:text-xl md:text-2xl">{t("ourMission")}</CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-muted-foreground text-sm sm:text-base">
-                        {t("missionDescription")}
-                      </p>
+                      <p className="text-muted-foreground text-sm sm:text-base">{t("missionDescription")}</p>
                     </CardContent>
                     <div className="absolute inset-0 bg-gradient-to-br from-transparent to-primary/10 opacity-0 hover:opacity-100 transition-opacity duration-300" />
                   </Card>
@@ -417,7 +396,7 @@ export default function HomeIndex() {
                     />
                 ))}
               </BentoGrid>
-              <FeaturesSectionDemo/>
+              <FeaturesSectionDemo />
             </div>
           </section>
 
@@ -442,32 +421,7 @@ export default function HomeIndex() {
                     <p className="text-muted-foreground text-sm sm:text-base">{t("address")}</p>
                   </div>
                 </div>
-                <Card className="shadow-lg relative overflow-hidden bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
-                  <CardHeader>
-                    <CardTitle className="text-lg sm:text-xl md:text-2xl">{t("sendMessage")}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <form className="space-y-4">
-                      <div className="space-y-2">
-                        <Label htmlFor="name" className="text-sm sm:text-base">{t("name")}</Label>
-                        <Input id="name" placeholder={t("namePlaceholder")} />
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="email" className="text-sm sm:text-base">{t("email")}</Label>
-                        <Input id="email" type="email" placeholder={t("emailPlaceholder")} />
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="message" className="text-sm sm:text-base">{t("message")}</Label>
-                        <Textarea id="message" placeholder={t("messagePlaceholder")} />
-                      </div>
-                      <Button type="submit" className="w-full">
-                        <Send className="h-4 w-4 mr-2" />
-                        {t("submit")}
-                      </Button>
-                    </form>
-                  </CardContent>
-                  <div className="absolute inset-0 bg-gradient-to-br from-transparent to-primary/10 opacity-0 hover:opacity-100 transition-opacity duration-300" />
-                </Card>
+<ContactCard/>
               </div>
             </div>
           </section>
