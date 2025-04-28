@@ -39,12 +39,13 @@ import { useTranslations, useLocale } from "next-intl";
 import { useRouter, usePathname } from "next/navigation";
 import LanguageSwitcher from "../LanguageSwitcher";
 import { cn } from "@/lib/utils";
-import { BentoGrid, BentoGridItem } from "../ui/bento-grid";
 import Image from "next/image";
 import Logo from "../../../public/Logo.png";
 import { FeaturesSectionDemo } from "@/components/FeaturesSectionDemo";
 import Globes from "@/components/Globe";
 import ContactCard from "@/components/ContactCard";
+import {BentoGrid,BentoGridItem} from "@/components/ui/bento-grid";
+import {BentoGrid1, BentoGridItem1} from "@/components/ui/bento-grid1";
 
 export default function HomeIndex() {
   const t = useTranslations("Index");
@@ -80,54 +81,70 @@ export default function HomeIndex() {
       description: t("services.software.portLogisticsAppDescription"),
       icon: <Ship className="h-4 w-4 text-primary" />,
       className: "sm:col-span-2 md:col-span-2 lg:col-span-2",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       title: t("services.software.shippingApp"),
       description: t("services.software.shippingAppDescription"),
       icon: <Ship className="h-4 w-4 text-primary" />,
       className: "sm:col-span-1 md:col-span-1 lg:col-span-1",
+      image: "https://images.unsplash.com/photo-1713388259485-5fb8454d16cf?q=80&w=2191&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+
     },
     {
       title: t("services.software.customWebDev"),
       description: t("services.software.customWebDevDescription"),
       icon: <Globe className="h-4 w-4 text-primary" />,
       className: "sm:col-span-1 md:col-span-1 lg:col-span-1",
+      image: "https://images.unsplash.com/photo-1732020743205-9a1da14e36fd?q=80&w=2165&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+
     },
     {
       title: t("services.software.customMobileDev"),
       description: t("services.software.customMobileDevDescription"),
       icon: <Globe className="h-4 w-4 text-primary" />,
       className: "sm:col-span-2 md:col-span-2 lg:col-span-2",
+      image: "https://images.unsplash.com/photo-1609921141835-710b7fa6e438?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       title: t("services.software.inventoryManagement"),
       description: t("services.software.inventoryManagementDescription"),
       icon: <Package className="h-4 w-4 text-primary" />,
       className: "sm:col-span-1 md:col-span-1 lg:col-span-1",
+      image: "https://images.unsplash.com/photo-1740914994657-f1cdffdc418e?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+
     },
     {
       title: t("services.software.vesselTracking"),
       description: t("services.software.vesselTrackingDescription"),
       icon: <Ship className="h-4 w-4 text-primary" />,
       className: "sm:col-span-1 md:col-span-1 lg:col-span-1",
+      image: "https://images.unsplash.com/photo-1630514969818-94aefc42ec47?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+
     },
     {
       title: t("services.software.warehouseAutomation"),
       description: t("services.software.warehouseAutomationDescription"),
       icon: <Warehouse className="h-4 w-4 text-primary" />,
       className: "sm:col-span-2 md:col-span-2 lg:col-span-2",
+      image: "https://images.unsplash.com/photo-1594904351111-a072f80b1a71?q=80&w=2235&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+
     },
     {
       title: t("services.software.freightForwarding"),
       description: t("services.software.freightForwardingDescription"),
       icon: <Truck className="h-4 w-4 text-primary" />,
       className: "sm:col-span-1 md:col-span-1 lg:col-span-1",
+      image: "https://images.unsplash.com/photo-1524747189276-85697ad1d098?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8dHJhbnNwb3J0YXRpb258ZW58MHwxfDB8fHwy"
+
     },
     {
       title: t("services.software.supplyChainAnalytics"),
       description: t("services.software.supplyChainAnalyticsDescription"),
       icon: <BarChart2 className="h-4 w-4 text-primary" />,
       className: "sm:col-span-1 md:col-span-1 lg:col-span-1",
+      image: "https://images.unsplash.com/photo-1605705658744-45f0fe8f9663?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+
     },
   ];
 
@@ -137,55 +154,67 @@ export default function HomeIndex() {
       description: t("services.hardware.barcodePrintersDescription"),
       icon: <Printer className="h-4 w-4 text-primary" />,
       className: "sm:col-span-1 md:col-span-1 lg:col-span-1",
+      image: "https://images.unsplash.com/photo-1646628426918-e1c8e208b40a?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+
     },
     {
       title: t("services.hardware.idCardPrinters"),
       description: t("services.hardware.idCardPrintersDescription"),
       icon: <Printer className="h-4 w-4 text-primary" />,
       className: "sm:col-span-2 md:col-span-2 lg:col-span-2",
+      image: "https://images.unsplash.com/photo-1625165406821-544b00fde1b7?q=80&w=2342&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+
     },
     {
       title: t("services.hardware.networkPrinters"),
       description: t("services.hardware.networkPrintersDescription"),
       icon: <Printer className="h-4 w-4 text-primary" />,
       className: "sm:col-span-1 md:col-span-1 lg:col-span-1",
-    },
-    {
-      title: t("services.hardware.photocopiers"),
-      description: t("services.hardware.photocopiersDescription"),
-      icon: <Printer className="h-4 w-4 text-primary" />,
-      className: "sm:col-span-1 md:col-span-1 lg:col-span-1",
+      image: "https://images.unsplash.com/photo-1717079556907-0381e6a61cab?q=80&w=2360&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+
     },
     {
       title: t("services.hardware.networking"),
       description: t("services.hardware.networkingDescription"),
       icon: <Network className="h-4 w-4 text-primary" />,
       className: "sm:col-span-2 md:col-span-2 lg:col-span-2",
+            image: "https://images.unsplash.com/photo-1724433336905-e693d678cef0?q=80&w=2116&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+
     },
+
     {
       title: t("services.hardware.infrastructure"),
       description: t("services.hardware.infrastructureDescription"),
       icon: <Server className="h-4 w-4 text-primary" />,
       className: "sm:col-span-1 md:col-span-1 lg:col-span-1",
+            image: "https://images.unsplash.com/photo-1663932210347-164a05ed0ccd?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+
     },
     {
       title: t("services.hardware.rfidReaders"),
       description: t("services.hardware.rfidReadersDescription"),
       icon: <Scan className="h-4 w-4 text-primary" />,
       className: "sm:col-span-1 md:col-span-1 lg:col-span-1",
+            image: "https://images.unsplash.com/photo-1637713387970-e0ffa225977b?q=80&w=2232&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+
     },
     {
       title: t("services.hardware.portScanners"),
       description: t("services.hardware.portScannersDescription"),
       icon: <Scan className="h-4 w-4 text-primary" />,
       className: "sm:col-span-2 md:col-span-2 lg:col-span-2",
+            image: "https://images.unsplash.com/photo-1726255294277-57c46883bd94?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+
     },
     {
       title: t("services.hardware.logisticsTerminals"),
       description: t("services.hardware.logisticsTerminalsDescription"),
       icon: <Server className="h-4 w-4 text-primary" />,
       className: "sm:col-span-1 md:col-span-1 lg:col-span-1",
+      image: "https://images.unsplash.com/photo-1494412519320-aa613dfb7738?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+
     },
+
   ];
 
   return (
@@ -230,8 +259,11 @@ export default function HomeIndex() {
             className="fixed top-0 left-0 right-0 z-50 px-4 lg:px-6 h-16 flex items-center justify-between border-b bg-background">
           <Link className="flex items-center justify-center" href="/">
             <Image src={Logo} width={100} height={100} alt="logo" className="h-6 w-6 m-2 text-primary"/>
+            <div className="flex flex-col">
             <span className="font-bold text-xl hidden md:block">{t("boilerplateName")}</span>
             <span className="font-bold text-xl block md:hidden">{t("logo")}</span>
+            <p className='text-gray-400 text-xs hidden md:block'>{t("subtitle")}</p>
+            </div>
           </Link>
           <div className="flex items-center gap-4 hidden md:block">
             <Button variant="link" asChild>
@@ -375,6 +407,7 @@ export default function HomeIndex() {
                             "[&>p:text-sm]"
                         )}
                         icon={item.icon}
+                        image={item.image}
                     />
                 ))}
               </BentoGrid>
@@ -382,9 +415,9 @@ export default function HomeIndex() {
               <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-center mb-4 text-foreground">
                 {t("services.hardware.title")}
               </h3>
-              <BentoGrid className="max-w-6xl mx-auto">
+              <BentoGrid1 className="max-w-6xl mx-auto">
                 {hardwareItems.map((item, i) => (
-                    <BentoGridItem
+                    <BentoGridItem1
                         key={i}
                         title={item.title}
                         description={item.description}
@@ -393,9 +426,10 @@ export default function HomeIndex() {
                             "[&>p:text-sm]"
                         )}
                         icon={item.icon}
+                        image={item.image}
                     />
                 ))}
-              </BentoGrid>
+              </BentoGrid1>
               <FeaturesSectionDemo />
             </div>
           </section>
@@ -431,20 +465,6 @@ export default function HomeIndex() {
         <footer className="py-6 px-4 sm:px-6 md:px-8 border-t">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-xs text-muted-foreground">{f("copyright")}</p>
-            <nav className="flex flex-wrap gap-4">
-              <Link href="#hero" className="text-xs hover:underline">
-                {t("hero")}
-              </Link>
-              <Link href="#about" className="text-xs hover:underline">
-                {t("about")}
-              </Link>
-              <Link href="#services" className="text-xs hover:underline">
-                {t("services.title")}
-              </Link>
-              <Link href="#contact" className="text-xs hover:underline">
-                {t("contact")}
-              </Link>
-            </nav>
           </div>
         </footer>
       </div>

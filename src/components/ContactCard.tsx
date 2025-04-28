@@ -109,7 +109,7 @@ const ContactDrawer: React.FC = () => {
         from_name: name,
         from_email: email,
         message,
-        to_email: 'mohammedmohsin203@gmail.com',
+        to_email: 'bntarabia@gmail.com',
       };
 
       // Send email via EmailJS
@@ -138,10 +138,10 @@ const ContactDrawer: React.FC = () => {
           </DrawerTrigger>
           <DrawerContent className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 shadow-lg">
             <DrawerHeader>
-              <DrawerTitle className="text-lg sm:text-xl md:text-2xl">{t('sendMessage')}</DrawerTitle>
+              <DrawerTitle className="text-lg sm:text-xl md:text-2xl mx-4">{t('sendMessage')}</DrawerTitle>
             </DrawerHeader>
             <form className="space-y-4 px-4 py-6" onSubmit={handleSubmit}>
-              <div className="space-y-2">
+              <div className="space-y-2 m-4">
                 <Label htmlFor="name" className="text-sm sm:text-base">{t('name')}</Label>
                 <Input
                     id="name"
@@ -151,7 +151,7 @@ const ContactDrawer: React.FC = () => {
                     disabled={isLoading}
                 />
               </div>
-              <div className="space-y-2">
+              <div className="space-y-2 m-4">
                 <Label htmlFor="email" className="text-sm sm:text-base">{t('email')}</Label>
                 <Input
                     id="email"
@@ -162,7 +162,7 @@ const ContactDrawer: React.FC = () => {
                     disabled={isLoading}
                 />
               </div>
-              <div className="space-y-2">
+              <div className="space-y-2 m-4">
                 <Label htmlFor="message" className="text-sm sm:text-base">{t('message')}</Label>
                 <Textarea
                     id="message"

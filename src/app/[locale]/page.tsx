@@ -5,6 +5,7 @@ import HomeIndex from "@/components/pages/HomeIndex";
 import { AnimatePresence } from "framer-motion";
 import Preloader from "@/components/PreLoader";
 import {SmoothCursor} from "@/components/ui/smooth-cursor";
+import {cn} from "@/lib/utils";
 
 export default function HomePage() {
     const [isLoading, setIsLoading] = useState(true);
@@ -26,51 +27,19 @@ export default function HomePage() {
     return (
         <>
             <AnimatePresence mode="wait">
-                {isLoading && <Preloader />}
+                {isLoading && <Preloader/>}
             </AnimatePresence>
-            <HomeIndex />
-            <SmoothCursor />
+            <div
+                className={cn(
+                    "absolute inset-0 z-[-10]",
+                    "[background-size:20px_20px]",
+                    "[background-image:radial-gradient(#d4d4d4_1px,transparent_1px)]",
+                    "dark:[background-image:radial-gradient(#404040_1px,transparent_1px)]",
+                )}
+            />
+            <HomeIndex/>
+            <SmoothCursor/>
         </>
     );
 }
 
-
-// 'use client'
-// import {use, useEffect, useState} from "react";
-// import { setRequestLocale } from "next-intl/server";
-// import HomeIndex from "@/components/pages/HomeIndex";
-// import {AnimatePresence} from "framer-motion";
-// import Preloader from "../../components/PreLoader";
-//
-// export default function HomePage({
-//   params,
-// }: {
-//   params: Promise<{ locale: string }>;
-// }) {
-//   const { locale } = use(params);
-//   // Enable static rendering
-//   setRequestLocale(locale);
-//     const [isLoading, setIsLoading] = useState(true);
-//
-//     useEffect(() => {
-//         (async () => {
-//             const LocomotiveScroll = (await import("locomotive-scroll")).default;
-//             const locomotiveScroll = new LocomotiveScroll();
-//
-//             setTimeout(() => {
-//                 setIsLoading(false);
-//                 document.body.style.cursor = "default";
-//                 window.scrollTo(0, 0);
-//             }, 2000);
-//         })();
-//     }, []);
-//
-//   return (
-//       <>
-//         <AnimatePresence mode="wait">
-//           {isLoading && <Preloader />}
-//         </AnimatePresence>
-//         <HomeIndex />
-//       </>
-//   )
-// }

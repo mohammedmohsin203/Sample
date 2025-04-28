@@ -1,6 +1,7 @@
 {
   "Index": {
     "logo": "BNT",
+    "subtitle": "Fada Mohammed Hila Al Otaibi Est.",
     "boilerplateName": "Burj Al Najoom Technology",
     "title": "Innovative Technology Solutions for Ports & Logistics",
     "description": "Burj Al Najoom Technology is a leading agency providing cutting-edge software and hardware solutions, specializing in port and logistics management to streamline operations and enhance efficiency.",
@@ -31,18 +32,20 @@
       },
       "hardware": {
         "title": "Hardware & Networking",
-        "barcodePrinters": "Barcode Label & Receipt Printers",
-        "barcodePrintersDescription": "High-quality printers for generating barcode labels and receipts, essential for inventory and logistics.",
-        "idCardPrinters": "PVC ID Card Printers",
-        "idCardPrintersDescription": "Specialized printers for producing durable PVC ID cards for employees and access control.",
-        "networkPrinters": "Connect & Share Network Printers",
-        "networkPrintersDescription": "Network-enabled printers for seamless printing across your organization.",
+        "barcodePrinters": "Barcode & Thermal Printer Services",
+        "barcodePrintersDescription": "We provide sales and services for all barcode and thermal printers, including Zebra, Epson, Bixolon, and more. Services include thermal printing solutions (direct thermal and thermal transfer), label customization, maintenance and repairs, software integration support, consumables management, and training to ensure efficiency and accuracy in inventory and logistics management.",
+        "idCardPrinters": "PVC ID Card Printer Services",
+        "idCardPrintersDescription": "We offer sales and services for all ID card printers, including Evolis, Zebra, ID Smart, Fargo, and more. Services include printing single or dual-sided cards with variable data (photos, names, barcodes, RFID chips), customization, maintenance, integration with attendance or access control systems, consumables supply, and training to produce secure and professional ID cards.",
+        "networkPrinters": "Installation of New Printers, Plotters & Photocopiers in Network",
+        "networkPrintersDescription": "We offer installation services for new network printers, plotters, and photocopiers to ensure seamless operation. Services include assessing requirements, physical installation, configuring IP addresses, installing drivers, integrating with existing systems, testing performance, setting up user permissions, and providing training to enhance efficiency and productivity.",
         "photocopiers": "Photocopiers",
         "photocopiersDescription": "Reliable photocopiers for high-volume document reproduction.",
-        "networking": "Modem, AP WiFi, Router Configuration",
-        "networkingDescription": "Comprehensive networking solutions, including modem setup, WiFi access points, and router configuration.",
-        "infrastructure": "Server, Data Centers & UPS Installation",
-        "infrastructureDescription": "End-to-end installation of servers, data centers, and uninterruptible power supplies for robust IT infrastructure.",
+        "networking": "Network IP Troubleshooting",
+        "networkingDescription": "We provide network IP troubleshooting services to ensure seamless connectivity between devices. Services include verifying physical connections, checking IP configurations, testing connectivity, resolving IP conflicts, resetting network settings, testing DNS settings, and optimizing network performance for stability and efficiency.",
+        "infrastructure": "Dell Server Assembling & Configuration",
+        "infrastructureDescription": "We provide Dell server assembling and configuration services to ensure optimal performance and scalability. Services include selecting the appropriate model, installing components (CPUs, RAM, storage drives, RAID controllers), updating firmware, configuring RAID, installing operating systems, setting up networks, deploying applications, and testing for stability and efficiency.",
+        "upsInstallation": "Server UPS Power Supply Installation",
+        "upsInstallationDescription": "We offer server UPS (Uninterruptible Power Supply) installation services to ensure continuous operation and protect data from power outages. Services include selecting the appropriate UPS, electrical connections, integration with monitoring software, testing, and maintenance planning for reliability.",
         "rfidReaders": "RFID Readers",
         "rfidReadersDescription": "Advanced RFID readers for tracking assets and inventory in real-time.",
         "portScanners": "Port Scanners",
@@ -91,19 +94,19 @@
       ],
       "hardware": [
         {
-          "title": "Barcode Label & Receipt Printers",
+          "title": "Barcode & Thermal Printer Services",
           "category": "Hardware Solutions",
-          "content": "Discover high-quality barcode label printers by Burj Al Najoom Technology, designed for logistics and inventory management to ensure accuracy and efficiency."
+          "content": "Discover Burj Al Najoom Technology's barcode and thermal printer services, including sales, maintenance, and integration, ensuring accuracy and efficiency in logistics and inventory management."
         },
         {
-          "title": "PVC ID Card Printers",
+          "title": "PVC ID Card Printer Services",
           "category": "Hardware Solutions",
-          "content": "Produce durable PVC ID cards for employees and access control with our specialized printers, tailored for secure logistics environments."
+          "content": "Produce durable and secure PVC ID cards with our specialized printer services, including sales, maintenance, and integration for access control needs."
         },
         {
-          "title": "Connect & Share Network Printers",
+          "title": "Installation of New Printers, Plotters & Photocopiers in Network",
           "category": "Hardware Solutions",
-          "content": "Enable seamless printing across your organization with Burj Al Najoom Technology's network-enabled printers, ideal for logistics operations."
+          "content": "Seamlessly install network printers, plotters, and photocopiers with Burj Al Najoom Technology to enhance productivity and efficiency in your operations."
         },
         {
           "title": "Photocopiers",
@@ -111,9 +114,34 @@
           "content": "Rely on our high-volume photocopiers for document reproduction, ensuring your logistics team has the tools needed for efficient operations."
         },
         {
-          "title": "Modem, AP WiFi, Router Configuration",
+          "title": "Network IP Troubleshooting",
           "category": "Hardware Solutions",
-          "content": "Set up comprehensive networking solutions with Burj Al Najoom Technology, including modem, WiFi access points, and router configuration for logistics networks."
+          "content": "Resolve network issues quickly with Burj Al Najoom Technology's IP troubleshooting services, ensuring seamless connectivity and network performance."
+        },
+        {
+          "title": "Dell Server Assembling & Configuration",
+          "category": "Hardware Solutions",
+          "content": "Get professionally assembled and configured Dell servers from Burj Al Najoom Technology, designed for optimal performance and scalability in your operations."
+        },
+        {
+          "title": "Server UPS Power Supply Installation",
+          "category": "Hardware Solutions",
+          "content": "Ensure continuous operation and data protection with Burj Al Najoom Technology's UPS installation services, designed for server reliability."
+        },
+        {
+          "title": "RFID Readers",
+          "category": "Hardware Solutions",
+          "content": "Track assets and inventory in real-time with Burj Al Najoom Technology's advanced RFID readers, designed to enhance logistics efficiency."
+        },
+        {
+          "title": "Port Scanners",
+          "category": "Hardware Solutions",
+          "content": "Ensure accurate cargo documentation with high-speed port scanners from Burj Al Najoom Technology, built for demanding port operations."
+        },
+        {
+          "title": "Logistics Terminals",
+          "category": "Hardware Solutions",
+          "content": "Deploy rugged logistics terminals from Burj Al Najoom Technology, designed for harsh environments and seamless logistics workflows."
         }
       ]
     },
