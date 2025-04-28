@@ -31,7 +31,6 @@ import {
   Package,
   Truck,
   BarChart2,
-  Scan,
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { ModeToggle } from "../ModeToggle";
@@ -40,7 +39,10 @@ import { useRouter, usePathname } from "next/navigation";
 import LanguageSwitcher from "../LanguageSwitcher";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import Logo from "../../../public/Logo.png";
+import Logo from "@/../public/Logo.png";
+import img1 from "@/../public/Printer2.png"
+import img2 from "@/../public/PRINTER.png"
+import img3 from "@/../public/IdCard.png"
 import { FeaturesSectionDemo } from "@/components/FeaturesSectionDemo";
 import Globes from "@/components/Globe";
 import ContactCard from "@/components/ContactCard";
@@ -126,7 +128,7 @@ export default function HomeIndex() {
       title: t("services.software.warehouseAutomation"),
       description: t("services.software.warehouseAutomationDescription"),
       icon: <Warehouse className="h-4 w-4 text-primary" />,
-      className: "sm:col-span-2 md:col-span-2 lg:col-span-2",
+      className: "sm:col-span-1 md:col-span-1 lg:col-span-1",
       image: "https://images.unsplash.com/photo-1594904351111-a072f80b1a71?q=80&w=2235&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 
     },
@@ -154,15 +156,14 @@ export default function HomeIndex() {
       description: t("services.hardware.barcodePrintersDescription"),
       icon: <Printer className="h-4 w-4 text-primary" />,
       className: "sm:col-span-1 md:col-span-1 lg:col-span-1",
-      image: "https://images.unsplash.com/photo-1646628426918-e1c8e208b40a?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-
+      image: img1
     },
     {
       title: t("services.hardware.idCardPrinters"),
       description: t("services.hardware.idCardPrintersDescription"),
       icon: <Printer className="h-4 w-4 text-primary" />,
-      className: "sm:col-span-2 md:col-span-2 lg:col-span-2",
-      image: "https://images.unsplash.com/photo-1625165406821-544b00fde1b7?q=80&w=2342&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      className: "sm:col-span-1 md:col-span-1 lg:col-span-1",
+      image: img3
 
     },
     {
@@ -170,18 +171,16 @@ export default function HomeIndex() {
       description: t("services.hardware.networkPrintersDescription"),
       icon: <Printer className="h-4 w-4 text-primary" />,
       className: "sm:col-span-1 md:col-span-1 lg:col-span-1",
-      image: "https://images.unsplash.com/photo-1717079556907-0381e6a61cab?q=80&w=2360&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-
+      image: img2
     },
     {
       title: t("services.hardware.networking"),
       description: t("services.hardware.networkingDescription"),
       icon: <Network className="h-4 w-4 text-primary" />,
-      className: "sm:col-span-2 md:col-span-2 lg:col-span-2",
+      className: "sm:col-span-1 md:col-span-1 lg:col-span-1",
             image: "https://images.unsplash.com/photo-1724433336905-e693d678cef0?q=80&w=2116&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 
     },
-
     {
       title: t("services.hardware.infrastructure"),
       description: t("services.hardware.infrastructureDescription"),
@@ -190,31 +189,6 @@ export default function HomeIndex() {
             image: "https://images.unsplash.com/photo-1663932210347-164a05ed0ccd?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 
     },
-    {
-      title: t("services.hardware.rfidReaders"),
-      description: t("services.hardware.rfidReadersDescription"),
-      icon: <Scan className="h-4 w-4 text-primary" />,
-      className: "sm:col-span-1 md:col-span-1 lg:col-span-1",
-            image: "https://images.unsplash.com/photo-1637713387970-e0ffa225977b?q=80&w=2232&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-
-    },
-    {
-      title: t("services.hardware.portScanners"),
-      description: t("services.hardware.portScannersDescription"),
-      icon: <Scan className="h-4 w-4 text-primary" />,
-      className: "sm:col-span-2 md:col-span-2 lg:col-span-2",
-            image: "https://images.unsplash.com/photo-1726255294277-57c46883bd94?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-
-    },
-    {
-      title: t("services.hardware.logisticsTerminals"),
-      description: t("services.hardware.logisticsTerminalsDescription"),
-      icon: <Server className="h-4 w-4 text-primary" />,
-      className: "sm:col-span-1 md:col-span-1 lg:col-span-1",
-      image: "https://images.unsplash.com/photo-1494412519320-aa613dfb7738?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-
-    },
-
   ];
 
   return (
@@ -392,26 +366,7 @@ export default function HomeIndex() {
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter text-center mb-6 text-foreground">
                 {t("services.title")}
               </h2>
-              <Separator className="my-6" />
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-center mb-4 text-foreground">
-                {t("services.software.title")}
-              </h3>
-              <BentoGrid className="max-w-6xl mx-auto">
-                {softwareItems.map((item, i) => (
-                    <BentoGridItem
-                        key={i}
-                        title={item.title}
-                        description={item.description}
-                        className={cn(
-                            i === 0 || i === 3 || i === 6 ? "sm:col-span-2 md:col-span-2 lg:col-span-2" : "sm:col-span-1 md:col-span-1 lg:col-span-1",
-                            "[&>p:text-sm]"
-                        )}
-                        icon={item.icon}
-                        image={item.image}
-                    />
-                ))}
-              </BentoGrid>
-              <Separator className="my-6" />
+              <Separator className="my-6"/>
               <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-center mb-4 text-foreground">
                 {t("services.hardware.title")}
               </h3>
@@ -422,15 +377,37 @@ export default function HomeIndex() {
                         title={item.title}
                         description={item.description}
                         className={cn(
-                            i === 1 || i === 4 || i === 7 ? "sm:col-span-2 md:col-span-2 lg:col-span-2" : "sm:col-span-1 md:col-span-1 lg:col-span-1",
-                            "[&>p:text-sm]"
+                            // i === 1 || i === 4 || i === 7 ? "sm:col-span-2 md:col-span-2 lg:col-span-2" : "sm:col-span-1 md:col-span-1 lg:col-span-1",
+                            // "[&>p:text-sm]"
+                            item.className
                         )}
                         icon={item.icon}
                         image={item.image}
                     />
                 ))}
               </BentoGrid1>
-              <FeaturesSectionDemo />
+              <Separator className="my-6"/>
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-center mb-4 text-foreground">
+                {t("services.software.title")}
+              </h3>
+              <BentoGrid className="max-w-6xl mx-auto">
+                {softwareItems.map((item, i) => (
+                    <BentoGridItem
+                        key={i}
+                        title={item.title}
+                        description={item.description}
+                        className={cn(
+                           // i === 0 || i === 3 || i === 6 ? "sm:col-span-2 md:col-span-2 lg:col-span-2" : "sm:col-span-1 md:col-span-1 lg:col-span-1",
+                           // "[&>p:text-sm]"
+                            item.className
+                        )}
+                        icon={item.icon}
+                        image={item.image}
+                    />
+                ))}
+              </BentoGrid>
+              <Separator className="my-6"/>
+              <FeaturesSectionDemo/>
             </div>
           </section>
 
@@ -443,11 +420,11 @@ export default function HomeIndex() {
               <div className="max-w-2xl mx-auto space-y-6">
                 <div className="space-y-4 text-center">
                   <div className="flex items-center justify-center gap-2">
-                    <Phone className="h-5 w-5 text-primary" />
+                    <Phone className="h-5 w-5 text-primary"/>
                     <p className="text-muted-foreground text-sm sm:text-base">{t("phone")}</p>
                   </div>
                   <div className="flex items-center justify-center gap-2">
-                    <Mail className="h-5 w-5 text-primary" />
+                    <Mail className="h-5 w-5 text-primary"/>
                     <p className="text-muted-foreground text-sm sm:text-base">{t("email")}</p>
                   </div>
                   <div className="flex items-center justify-center gap-2">

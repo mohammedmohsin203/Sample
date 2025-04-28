@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
-import Image from "next/image";
+import Image, {StaticImageData} from "next/image";
 
 export const BentoGrid1 = ({
                                className,
@@ -13,8 +13,8 @@ export const BentoGrid1 = ({
     return (
         <div
             className={cn(
-                "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full max-w-[900px] mx-auto",
-                className
+                "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl mx-auto",
+                {className}
             )}
         >
             {children}
@@ -33,7 +33,7 @@ export const BentoGridItem1 = ({
     title?: string | React.ReactNode;
     description?: string | React.ReactNode;
     icon?: React.ReactNode;
-    image?: string;
+    image?: string | StaticImageData;
 }) => {
     const cardRef = useRef<HTMLDivElement>(null);
     const imageRef = useRef<HTMLImageElement>(null);
