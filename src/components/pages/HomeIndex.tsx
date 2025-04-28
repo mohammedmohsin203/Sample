@@ -40,9 +40,6 @@ import LanguageSwitcher from "../LanguageSwitcher";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Logo from "@/../public/Logo.png";
-import img1 from "@/../public/Printer2.png"
-import img2 from "@/../public/PRINTER.png"
-import img3 from "@/../public/IdCard.png"
 import { FeaturesSectionDemo } from "@/components/FeaturesSectionDemo";
 import Globes from "@/components/Globe";
 import ContactCard from "@/components/ContactCard";
@@ -156,14 +153,14 @@ export default function HomeIndex() {
       description: t("services.hardware.barcodePrintersDescription"),
       icon: <Printer className="h-4 w-4 text-primary" />,
       className: "sm:col-span-1 md:col-span-1 lg:col-span-1",
-      image: img1
+      image: '/Printer2.png'
     },
     {
       title: t("services.hardware.idCardPrinters"),
       description: t("services.hardware.idCardPrintersDescription"),
       icon: <Printer className="h-4 w-4 text-primary" />,
       className: "sm:col-span-1 md:col-span-1 lg:col-span-1",
-      image: img3
+      image: '/PRINTER.png'
 
     },
     {
@@ -171,7 +168,7 @@ export default function HomeIndex() {
       description: t("services.hardware.networkPrintersDescription"),
       icon: <Printer className="h-4 w-4 text-primary" />,
       className: "sm:col-span-1 md:col-span-1 lg:col-span-1",
-      image: img2
+      image: '/IdCard.png'
     },
     {
       title: t("services.hardware.networking"),
